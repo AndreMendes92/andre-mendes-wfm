@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Andre Mendes | Workforce Management Leader</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#0a1f3c;--blue:#1a4a8a;--accent:#2e7dd1;--light:#f4f7fb;
+    --text:#1a1a2e;--muted:#5a6a7e;--white:#ffffff;--border:#dce4ef;
+  }
+  body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--white);}
+  a{color:inherit;text-decoration:none;}
+
+  nav{position:sticky;top:0;z-index:100;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:62px;}
+  .nav-logo{color:var(--white);font-weight:700;font-size:1.1rem;letter-spacing:.5px;}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{color:rgba(255,255,255,.8);font-size:.88rem;letter-spacing:.4px;transition:color .2s;}
+  .nav-links a:hover{color:var(--white);}
+  .nav-cta{background:var(--accent);color:var(--white)!important;padding:7px 18px;border-radius:4px;font-weight:600!important;}
+
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:80px 5% 70px;display:flex;align-items:center;gap:60px;flex-wrap:wrap;}
+  .hero-left{display:flex;align-items:center;gap:40px;flex:1;min-width:280px;flex-wrap:wrap;}
+  .headshot-wrap img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.25);box-shadow:0 8px 32px rgba(0,0,0,.3);}
+  .hero-tag{display:inline-block;background:rgba(46,125,209,.3);color:#7db8f0;font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;margin-bottom:14px;}
+  .hero h1{color:var(--white);font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:800;line-height:1.15;margin-bottom:12px;}
+  .hero h1 span{color:#7db8f0;}
+  .hero-sub{color:rgba(255,255,255,.75);font-size:1rem;line-height:1.7;max-width:500px;margin-bottom:26px;}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-primary{background:var(--accent);color:var(--white);padding:12px 28px;border-radius:5px;font-weight:700;font-size:.95rem;transition:background .2s;}
+  .btn-primary:hover{background:#1e5fa8;}
+  .btn-outline{border:2px solid rgba(255,255,255,.5);color:var(--white);padding:12px 28px;border-radius:5px;font-weight:600;font-size:.95rem;transition:all .2s;}
+  .btn-outline:hover{border-color:var(--white);}
+  .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:28px 32px;display:flex;flex-direction:column;gap:18px;min-width:180px;flex-shrink:0;}
+  .stat{text-align:center;}
+  .stat-num{color:var(--white);font-size:1.9rem;font-weight:800;}
+  .stat-label{color:rgba(255,255,255,.6);font-size:.78rem;margin-top:2px;}
+  .divider-v{width:1px;background:rgba(255,255,255,.2);}
+
+  section{padding:72px 5%;}
+  .section-label{font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+  .section-title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:var(--navy);margin-bottom:14px;}
+  .section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:600px;margin-bottom:44px;}
+
+  .expertise{background:var(--light);}
+  .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;}
+  .card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:26px 24px;transition:box-shadow .2s,transform .2s;}
+  .card:hover{box-shadow:0 8px 28px rgba(10,31,60,.1);transform:translateY(-3px);}
+  .card-icon{font-size:1.6rem;margin-bottom:14px;}
+  .card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
+  .card p{font-size:.87rem;color:var(--muted);line-height:1.6;}
+
+  .services{background:var(--white);}
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
+  .svc-card{border:2px solid var(--border);border-radius:10px;padding:30px 26px;transition:border-color .2s,box-shadow .2s;}
+  .svc-card:hover{border-color:var(--accent);box-shadow:0 6px 24px rgba(46,125,209,.1);}
+  .svc-card .svc-icon{font-size:2rem;margin-bottom:14px;}
+  .svc-card h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:10px;}
+  .svc-card p{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px;}
+  .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .svc-tag{background:var(--light);color:var(--accent);font-size:.76rem;font-weight:600;padding:3px 10px;border-radius:20px;}
+  .svc-cta{display:inline-block;margin-top:44px;background:var(--navy);color:var(--white);padding:13px 32px;border-radius:5px;font-weight:700;transition:background .2s;}
+  .svc-cta:hover{background:var(--blue);}
+
+  .exp-bg{background:var(--light);}
+  .timeline{max-width:820px;}
+  .tl-item{display:flex;gap:24px;margin-bottom:40px;}
+  .tl-left{display:flex;flex-direction:column;align-items:center;min-width:42px;}
+  .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--white);box-shadow:0 0 0 2px var(--accent);flex-shrink:0;}
+  .tl-line{flex:1;width:2px;background:var(--border);margin-top:6px;}
+  .tl-content{padding-bottom:8px;}
+  .tl-company{font-size:.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
+  .tl-role{font-size:1.05rem;font-weight:700;color:var(--navy);}
+  .tl-date{font-size:.82rem;color:var(--muted);margin:4px 0 10px;}
+  .tl-bullets{list-style:none;padding:0;}
+  .tl-bullets li{font-size:.88rem;color:var(--muted);line-height:1.6;padding-left:14px;position:relative;margin-bottom:5px;}
+  .tl-bullets li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700;}
+
+  .impact{background:var(--navy);}
+  .impact .section-title{color:var(--white);}
+  .impact .section-sub{color:rgba(255,255,255,.6);}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;}
+  .metric-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:30px 24px;text-align:center;}
+  .metric-num{font-size:2.2rem;font-weight:800;color:#7db8f0;}
+  .metric-label{color:rgba(255,255,255,.65);font-size:.88rem;margin-top:6px;line-height:1.4;}
+
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;}
+  .skill-group h3{font-size:.85rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--navy);margin-bottom:14px;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--light);border:1px solid var(--border);color:var(--text);font-size:.82rem;padding:5px 12px;border-radius:20px;}
+
+  .edu{background:var(--light);}
+  .edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+  .edu-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:22px 20px;}
+  .edu-card .school{font-size:.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);}
+  .edu-card .degree{font-size:.95rem;font-weight:700;color:var(--navy);margin:6px 0 4px;}
+  .edu-card .year{font-size:.82rem;color:var(--muted);}
+
+  .contact-inner{max-width:620px;margin:0 auto;text-align:center;}
+  .contact-inner .section-title{margin-bottom:12px;}
+  .contact-inner .section-sub{margin:0 auto 36px;}
+  .contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .contact-btn{display:flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);padding:13px 26px;border-radius:5px;font-weight:600;font-size:.9rem;transition:background .2s;}
+  .contact-btn:hover{background:var(--blue);}
+  .contact-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  footer{background:var(--navy);text-align:center;padding:24px 5%;color:rgba(255,255,255,.4);font-size:.82rem;}
+
+  @media(max-width:640px){
+    .hero{padding:50px 5%;gap:32px;}
+    .hero-card{flex-direction:row;justify-content:space-around;}
+    .headshot-wrap img{width:110px;height:110px;}
+    .nav-links a:not(.nav-cta){display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Andre Mendes</div>
+  <div class="nav-links">
+    <a href="#expertise">Expertise</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="headshot-wrap">
+      <!-- Make sure photo.jpg is in the same folder as this file -->
+      <img src="photo.jpg" alt="Andre Mendes"/>
+    </div>
+    <div class="hero-text">
+      <div class="hero-tag">Workforce Management Leader</div>
+      <h1>Andre Mendes<br/><span>WFM Strategist &amp; Team Lead</span></h1>
+      <p class="hero-sub">Driving forecasting accuracy, capacity planning, and automation across global operations. 9+ years turning workforce complexity into measurable business results.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Work With Me</a>
+        <a href="#experience" class="btn-outline">View Experience</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="stat"><div class="stat-num">9+</div><div class="stat-label">Years in WFM</div></div>
+    <div class="divider-v"></div>
+    <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Agents Supported</div></div>
+    <div class="divider-v"></div>
+    <div class="stat"><div class="stat-num">95%</div><div class="stat-label">Forecast Accuracy</div></div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="section-label">What I Do</div>
+  <div class="section-title">Core Expertise</div>
+  <p class="section-sub">From predictive modeling to automation frameworks, I build WFM solutions that scale with your business and empower your teams.</p>
+  <div class="cards-grid">
+    <div class="card"><div class="card-icon">📊</div><h3>Forecasting &amp; Capacity Planning</h3><p>Long- and short-term volume forecasting, shrinkage modeling, and headcount planning to ensure the right people are in the right place.</p></div>
+    <div class="card"><div class="card-icon">⚙️</div><h3>Process Automation</h3><p>Building RTA bots with PowerShell and OCR to eliminate manual monitoring, reduce errors, and save hundreds of operational hours monthly.</p></div>
+    <div class="card"><div class="card-icon">📈</div><h3>Power BI &amp; Analytics</h3><p>Designing executive-level dashboards and reporting pipelines using Power BI, Power Query, and M Language for real-time operational visibility.</p></div>
+    <div class="card"><div class="card-icon">🧩</div><h3>WFM Technology Deployment</h3><p>Leading enterprise WFM platform rollouts (NICE IEX, IEX Forecasting, Avaya, Genesys) across large, distributed operations.</p></div>
+    <div class="card"><div class="card-icon">👥</div><h3>Team Leadership</h3><p>Leading and mentoring WFM analysts, driving continuous improvement culture, and aligning workforce strategy with business objectives.</p></div>
+    <div class="card"><div class="card-icon">🔍</div><h3>Intraday &amp; Real-Time Management</h3><p>Monitoring real-time adherence, managing service level deviations, and executing agile intraday adjustments across multi-LOB environments.</p></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-label">How I Can Help</div>
+  <div class="section-title">Services Offered</div>
+  <p class="section-sub">Available for full-time leadership roles, consulting engagements, and project-based work. Here's what I can deliver for your organization.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">🔎</div><h3>WFM Audit &amp; Optimization</h3><p>A thorough review of your current workforce management processes, tools, and accuracy — delivering a clear, actionable improvement roadmap.</p><div class="svc-tags"><span class="svc-tag">Forecasting Review</span><span class="svc-tag">Scheduling Audit</span><span class="svc-tag">SLA Analysis</span></div></div>
+    <div class="svc-card"><div class="svc-icon">🤖</div><h3>Automation &amp; Bot Development</h3><p>Custom automation solutions for RTA monitoring, absenteeism tracking, AHT alerts, and reporting — saving hundreds of operational hours annually.</p><div class="svc-tags"><span class="svc-tag">PowerShell</span><span class="svc-tag">RTA Bot</span><span class="svc-tag">OCR Automation</span></div></div>
+    <div class="svc-card"><div class="svc-icon">📊</div><h3>Power BI Dashboard Design</h3><p>End-to-end design and build of executive and operational dashboards — turning raw WFM data into clear, real-time visual insights.</p><div class="svc-tags"><span class="svc-tag">Power BI</span><span class="svc-tag">Power Query</span><span class="svc-tag">Executive Reporting</span></div></div>
+    <div class="svc-card"><div class="svc-icon">🚀</div><h3>WFM Platform Implementation</h3><p>End-to-end deployment of WFM platforms including NICE IEX — from requirements and configuration to training and go-live support.</p><div class="svc-tags"><span class="svc-tag">NICE IEX</span><span class="svc-tag">IEX Forecasting</span><span class="svc-tag">Change Management</span></div></div>
+    <div class="svc-card"><div class="svc-icon">📐</div><h3>Capacity &amp; Headcount Modeling</h3><p>Robust capacity models accounting for growth, attrition, shrinkage, and seasonality — giving your business the confidence to plan and hire precisely.</p><div class="svc-tags"><span class="svc-tag">Headcount Planning</span><span class="svc-tag">Shrinkage Modeling</span><span class="svc-tag">Scenario Planning</span></div></div>
+    <div class="svc-card"><div class="svc-icon">🎓</div><h3>WFM Training &amp; Team Coaching</h3><p>Structured training programs for WFM analysts and operations teams — covering forecasting, tools, reporting, and best practices.</p><div class="svc-tags"><span class="svc-tag">Analyst Training</span><span class="svc-tag">SOPs</span><span class="svc-tag">Process Documentation</span></div></div>
+  </div>
+  <div style="text-align:center;"><a href="#contact" class="svc-cta">Let's Discuss Your Needs →</a></div>
+</section>
+
+<section class="exp-bg" id="experience">
+  <div class="section-label">Career</div>
+  <div class="section-title">Professional Experience</div>
+  <p class="section-sub">Over 9 years across contact center operations, BPO, and financial services in Canada and Brazil.</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-company">Hootsuite · Vancouver, BC</div>
+        <div class="tl-role">Team Lead, Workforce Management</div>
+        <div class="tl-date">September 2025 – Present</div>
+        <ul class="tl-bullets">
+          <li>Leading WFM strategy across global teams, driving forecasting accuracy and operational resilience.</li>
+          <li>Overseeing capacity planning, automation initiatives, and service continuity programs.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-company">Coast Capital Savings · Surrey, BC</div>
+        <div class="tl-role">Workforce Planning Analyst</div>
+        <div class="tl-date">January 2024 – October 2025</div>
+        <ul class="tl-bullets">
+          <li>Built long- and short-term forecasts for call volumes, AHT, and shrinkage using IEX and advanced Excel models.</li>
+          <li>Developed the RTA Bot (PowerShell + OCR) to automate spike and absenteeism tracking.</li>
+          <li>Delivered daily recaps and biweekly executive presentations with actionable operational insights.</li>
+          <li>Documented WFM procedures to standardize workflows and improve scalability.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-company">Concentrix · São Paulo, Brazil</div>
+        <div class="tl-role">Workforce Planning Specialist → Senior Analyst → Analyst</div>
+        <div class="tl-date">April 2020 – September 2023 · 3 yrs 6 mos</div>
+        <ul class="tl-bullets">
+          <li>Led NICE IEX WFM v7.1 deployment for all Brazil operations (10,000+ employees).</li>
+          <li>Built an RTA bot POC that saved $100,000 annually for the organization.</li>
+          <li>Developed Power BI dashboard reducing Net Staffing report production from 2 hours to 10 minutes.</li>
+          <li>Increased client dataset visibility from 30% to 90% within 90 days.</li>
+          <li>Mentored 50+ WFM analysts across 20+ client accounts.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-company">Conduent · São Paulo, Brazil</div>
+        <div class="tl-role">WFM Supervisor → WFM Analyst</div>
+        <div class="tl-date">May 2016 – April 2020 · 4 yrs</div>
+        <ul class="tl-bullets">
+          <li>Improved agent productivity by 30% through optimized break and lunch scheduling.</li>
+          <li>Led a team of 5 RTA staff supporting 500+ agents.</li>
+          <li>Responsible for internal and external audits, adherence tracking, and executive reporting.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div></div>
+      <div class="tl-content">
+        <div class="tl-company">Pirelli Tyres · Santo André, Brazil</div>
+        <div class="tl-role">Efficiency Controller</div>
+        <div class="tl-date">January 2012 – January 2016 · 4 yrs</div>
+        <ul class="tl-bullets">
+          <li>Managed efficiency tracking and operational controls in a manufacturing environment.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="impact">
+  <div class="section-label">Results</div>
+  <div class="section-title">Measurable Impact</div>
+  <p class="section-sub">Numbers tell the story. Here's what a decade of WFM focus delivers.</p>
+  <div class="metrics">
+    <div class="metric-card"><div class="metric-num">60%→95%</div><div class="metric-label">Forecast accuracy improvement through predictive modeling</div></div>
+    <div class="metric-card"><div class="metric-num">$100K</div><div class="metric-label">Annual savings from RTA bot automation at Concentrix</div></div>
+    <div class="metric-card"><div class="metric-num">$45K</div><div class="metric-label">Annual savings from internal scheduling system deployment</div></div>
+    <div class="metric-card"><div class="metric-num">2h→10min</div><div class="metric-label">Net Staffing report production time with Power BI automation</div></div>
+    <div class="metric-card"><div class="metric-num">30%→90%</div><div class="metric-label">Client dataset visibility improvement within 90 days</div></div>
+    <div class="metric-card"><div class="metric-num">+30%</div><div class="metric-label">Agent productivity improvement through optimized scheduling</div></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">Toolkit</div>
+  <div class="section-title">Skills &amp; Technologies</div>
+  <p class="section-sub">A broad, battle-tested set of tools and methodologies honed across industries and geographies.</p>
+  <div class="skills-grid">
+    <div class="skill-group"><h3>WFM Platforms</h3><div class="tags"><span class="tag">NICE IEX WFM</span><span class="tag">IEX Forecasting</span><span class="tag">Avaya CMS</span><span class="tag">Genesys CMS</span><span class="tag">IBM Cognos</span></div></div>
+    <div class="skill-group"><h3>Analytics &amp; Reporting</h3><div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">Excel (Advanced)</span><span class="tag">M Language</span><span class="tag">PowerPoint</span></div></div>
+    <div class="skill-group"><h3>Automation &amp; Dev</h3><div class="tags"><span class="tag">PowerShell</span><span class="tag">OCR (Tesseract)</span><span class="tag">Bot Automation</span><span class="tag">SharePoint</span><span class="tag">OneDrive</span></div></div>
+    <div class="skill-group"><h3>WFM Disciplines</h3><div class="tags"><span class="tag">Forecasting</span><span class="tag">Capacity Planning</span><span class="tag">Scheduling</span><span class="tag">Real-Time Management</span><span class="tag">Shrinkage Analysis</span><span class="tag">Headcount Modeling</span></div></div>
+  </div>
+</section>
+
+<section class="edu" id="education">
+  <div class="section-label">Education</div>
+  <div class="section-title">Academic Background</div>
+  <p class="section-sub">Combining business, engineering, and communication disciplines to lead with both strategy and technical depth.</p>
+  <div class="edu-grid">
+    <div class="edu-card"><div class="school">University Canada West</div><div class="degree">MBA – Business Administration</div><div class="year">2023 – 2024 · Vancouver, BC</div></div>
+    <div class="edu-card"><div class="school">Centro Universitário Anhangüera</div><div class="degree">Bachelor of Engineering – Industrial Management</div><div class="year">2013 – 2018</div></div>
+    <div class="edu-card"><div class="school">Georgia Institute of Technology</div><div class="degree">Specialization – English Communication</div><div class="year">2021</div></div>
+    <div class="edu-card"><div class="school">Escola Conquer</div><div class="degree">Organizational Leadership</div><div class="year">2022</div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Get In Touch</div>
+    <div class="section-title">Let's Work Together</div>
+    <p class="section-sub">Whether you're looking for a WFM leader for your organization or a consultant to optimize your workforce operations — I'd love to connect.</p>
+    <div class="contact-links">
+      <a href="mailto:andremanentem@gmail.com" class="contact-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        andremanentem@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/andremendes-2610" target="_blank" class="contact-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn Profile
+      </a>
+      <a href="tel:+17782550144" class="contact-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.87 2 2 0 0 1 3.58 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6.1 6.1l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +1 778 255 0144
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Andre Mendes · Workforce Management Leader · Vancouver, BC</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
