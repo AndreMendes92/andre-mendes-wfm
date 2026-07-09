@@ -13,13 +13,15 @@
   body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--white);}
   a{color:inherit;text-decoration:none;}
 
+  /* NAV */
   nav{position:sticky;top:0;z-index:100;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:62px;}
-  .nav-logo{color:var(--white);font-weight:700;font-size:1.1rem;letter-spacing:.5px;}
-  .nav-links{display:flex;gap:28px;}
-  .nav-links a{color:rgba(255,255,255,.8);font-size:.88rem;letter-spacing:.4px;transition:color .2s;}
+  .nav-logo{color:var(--white);font-weight:700;font-size:1.1rem;}
+  .nav-links{display:flex;gap:24px;align-items:center;}
+  .nav-links a{color:rgba(255,255,255,.8);font-size:.85rem;letter-spacing:.4px;transition:color .2s;}
   .nav-links a:hover{color:var(--white);}
   .nav-cta{background:var(--accent);color:var(--white)!important;padding:7px 18px;border-radius:4px;font-weight:600!important;}
 
+  /* HERO */
   .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:80px 5% 70px;display:flex;align-items:center;gap:60px;flex-wrap:wrap;}
   .hero-left{display:flex;align-items:center;gap:40px;flex:1;min-width:280px;flex-wrap:wrap;}
   .headshot-wrap img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.25);box-shadow:0 8px 32px rgba(0,0,0,.3);}
@@ -38,11 +40,27 @@
   .stat-label{color:rgba(255,255,255,.6);font-size:.78rem;margin-top:2px;}
   .divider-v{width:1px;background:rgba(255,255,255,.2);}
 
+  /* SECTIONS */
   section{padding:72px 5%;}
   .section-label{font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
   .section-title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:var(--navy);margin-bottom:14px;}
   .section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:600px;margin-bottom:44px;}
 
+  /* ABOUT */
+  .about{background:var(--navy);}
+  .about-inner{display:flex;gap:60px;align-items:center;flex-wrap:wrap;}
+  .about-photo{flex-shrink:0;}
+  .about-photo img{width:240px;height:280px;object-fit:cover;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.4);border:3px solid rgba(255,255,255,.15);}
+  .about-text{flex:1;min-width:260px;}
+  .about .section-label{color:#7db8f0;}
+  .about .section-title{color:var(--white);}
+  .about-body{color:rgba(255,255,255,.8);font-size:1rem;line-height:1.8;}
+  .about-body p{margin-bottom:14px;}
+  .about-stats{display:flex;gap:32px;margin-top:28px;flex-wrap:wrap;}
+  .about-stat .n{font-size:2rem;font-weight:800;color:#7db8f0;}
+  .about-stat .l{color:rgba(255,255,255,.6);font-size:.82rem;margin-top:2px;}
+
+  /* EXPERTISE */
   .expertise{background:var(--light);}
   .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;}
   .card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:26px 24px;transition:box-shadow .2s,transform .2s;}
@@ -51,11 +69,31 @@
   .card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
   .card p{font-size:.87rem;color:var(--muted);line-height:1.6;}
 
-  .services{background:var(--white);}
+  /* PORTFOLIO */
+  .portfolio{background:var(--white);}
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;}
+  .proj-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .2s,transform .2s;}
+  .proj-card:hover{box-shadow:0 10px 36px rgba(10,31,60,.12);transform:translateY(-4px);}
+  .proj-header{background:linear-gradient(135deg,var(--navy),var(--blue));padding:24px 24px 20px;display:flex;align-items:flex-start;gap:14px;}
+  .proj-icon{font-size:2rem;flex-shrink:0;margin-top:2px;}
+  .proj-header-text{}
+  .proj-employer{font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#7db8f0;margin-bottom:4px;}
+  .proj-title{font-size:1.05rem;font-weight:800;color:var(--white);line-height:1.3;}
+  .proj-year{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:3px;}
+  .proj-body{padding:22px 24px;}
+  .proj-desc{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+  .proj-results{list-style:none;padding:0;margin-bottom:16px;}
+  .proj-results li{font-size:.84rem;color:var(--text);padding:5px 0 5px 18px;position:relative;border-bottom:1px solid var(--border);}
+  .proj-results li:last-child{border-bottom:none;}
+  .proj-results li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700;font-size:.8rem;}
+  .proj-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),#1a6bb8);color:var(--white);font-size:.8rem;font-weight:700;padding:5px 14px;border-radius:20px;}
+
+  /* SERVICES */
+  .services{background:var(--light);}
   .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
-  .svc-card{border:2px solid var(--border);border-radius:10px;padding:30px 26px;transition:border-color .2s,box-shadow .2s;}
+  .svc-card{background:var(--white);border:2px solid var(--border);border-radius:10px;padding:30px 26px;transition:border-color .2s,box-shadow .2s;}
   .svc-card:hover{border-color:var(--accent);box-shadow:0 6px 24px rgba(46,125,209,.1);}
-  .svc-card .svc-icon{font-size:2rem;margin-bottom:14px;}
+  .svc-icon{font-size:2rem;margin-bottom:14px;}
   .svc-card h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:10px;}
   .svc-card p{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px;}
   .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
@@ -63,7 +101,8 @@
   .svc-cta{display:inline-block;margin-top:44px;background:var(--navy);color:var(--white);padding:13px 32px;border-radius:5px;font-weight:700;transition:background .2s;}
   .svc-cta:hover{background:var(--blue);}
 
-  .exp-bg{background:var(--light);}
+  /* EXPERIENCE */
+  .exp-bg{background:var(--white);}
   .timeline{max-width:820px;}
   .tl-item{display:flex;gap:24px;margin-bottom:40px;}
   .tl-left{display:flex;flex-direction:column;align-items:center;min-width:42px;}
@@ -77,6 +116,7 @@
   .tl-bullets li{font-size:.88rem;color:var(--muted);line-height:1.6;padding-left:14px;position:relative;margin-bottom:5px;}
   .tl-bullets li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700;}
 
+  /* IMPACT */
   .impact{background:var(--navy);}
   .impact .section-title{color:var(--white);}
   .impact .section-sub{color:rgba(255,255,255,.6);}
@@ -85,73 +125,106 @@
   .metric-num{font-size:2.2rem;font-weight:800;color:#7db8f0;}
   .metric-label{color:rgba(255,255,255,.65);font-size:.88rem;margin-top:6px;line-height:1.4;}
 
+  /* SKILLS */
+  .skills{background:var(--light);}
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;}
   .skill-group h3{font-size:.85rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--navy);margin-bottom:14px;}
   .tags{display:flex;flex-wrap:wrap;gap:8px;}
-  .tag{background:var(--light);border:1px solid var(--border);color:var(--text);font-size:.82rem;padding:5px 12px;border-radius:20px;}
+  .tag{background:var(--white);border:1px solid var(--border);color:var(--text);font-size:.82rem;padding:5px 12px;border-radius:20px;}
 
-  .edu{background:var(--light);}
+  /* EDUCATION */
+  .edu{background:var(--white);}
   .edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-  .edu-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:22px 20px;}
+  .edu-card{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:22px 20px;}
   .edu-card .school{font-size:.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);}
   .edu-card .degree{font-size:.95rem;font-weight:700;color:var(--navy);margin:6px 0 4px;}
   .edu-card .year{font-size:.82rem;color:var(--muted);}
 
+  /* CONTACT */
+  .contact{background:var(--navy);}
   .contact-inner{max-width:620px;margin:0 auto;text-align:center;}
-  .contact-inner .section-title{margin-bottom:12px;}
-  .contact-inner .section-sub{margin:0 auto 36px;}
+  .contact .section-label{color:#7db8f0;}
+  .contact .section-title{color:var(--white);}
+  .contact .section-sub{color:rgba(255,255,255,.65);margin:0 auto 36px;}
   .contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
-  .contact-btn{display:flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);padding:13px 26px;border-radius:5px;font-weight:600;font-size:.9rem;transition:background .2s;}
-  .contact-btn:hover{background:var(--blue);}
+  .contact-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:var(--white);padding:13px 22px;border-radius:5px;font-weight:600;font-size:.88rem;transition:background .2s;}
+  .contact-btn:hover{background:rgba(255,255,255,.18);}
   .contact-btn svg{width:18px;height:18px;flex-shrink:0;}
 
-  footer{background:var(--navy);text-align:center;padding:24px 5%;color:rgba(255,255,255,.4);font-size:.82rem;}
+  footer{background:#060f1e;text-align:center;padding:24px 5%;color:rgba(255,255,255,.35);font-size:.82rem;}
 
-  @media(max-width:640px){
+  @media(max-width:700px){
     .hero{padding:50px 5%;gap:32px;}
     .hero-card{flex-direction:row;justify-content:space-around;}
     .headshot-wrap img{width:110px;height:110px;}
     .nav-links a:not(.nav-cta){display:none;}
+    .about-photo img{width:100%;height:220px;}
   }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-logo">Andre Mendes</div>
   <div class="nav-links">
-    <a href="#expertise">Expertise</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
     <a href="#services">Services</a>
     <a href="#experience">Experience</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="headshot-wrap">
-      <!-- Make sure photo.jpg is in the same folder as this file -->
       <img src="photo.jpg" alt="Andre Mendes"/>
     </div>
     <div class="hero-text">
       <div class="hero-tag">Workforce Management Leader</div>
       <h1>Andre Mendes<br/><span>WFM Strategist &amp; Team Lead</span></h1>
-      <p class="hero-sub">Driving forecasting accuracy, capacity planning, and automation across global operations. 9+ years turning workforce complexity into measurable business results.</p>
+      <p class="hero-sub">Elevate your strategy &amp; operations standards. 9+ years turning workforce complexity into measurable business results.</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn-primary">Work With Me</a>
-        <a href="#experience" class="btn-outline">View Experience</a>
+        <a href="#portfolio" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-outline">Work With Me</a>
       </div>
     </div>
   </div>
   <div class="hero-card">
     <div class="stat"><div class="stat-num">9+</div><div class="stat-label">Years in WFM</div></div>
     <div class="divider-v"></div>
-    <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Agents Supported</div></div>
+    <div class="stat"><div class="stat-num">22+</div><div class="stat-label">Clients Served</div></div>
     <div class="divider-v"></div>
     <div class="stat"><div class="stat-num">95%</div><div class="stat-label">Forecast Accuracy</div></div>
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-photo">
+      <img src="photo.jpg" alt="Andre Mendes"/>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Who Am I?</div>
+      <div class="section-title">Hi, I'm Andre Mendes.</div>
+      <div class="about-body">
+        <p>With over 10 years of experience in Workforce Management, analytics, and operations, I specialize in helping organizations transform complex operational data into clear strategies that drive efficiency and performance.</p>
+        <p>I have worked with more than 22 clients and organizations, led Workforce Management teams in Brazil and Canada, and delivered initiatives that improved forecasting accuracy, optimized staffing models, and reduced operational costs while maintaining service quality.</p>
+        <p>My approach combines data, strategy, and operational expertise to help organizations run smarter and scale sustainably.</p>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat"><div class="n">22+</div><div class="l">Clients &amp; Organizations</div></div>
+        <div class="about-stat"><div class="n">10K+</div><div class="l">Agents Supported</div></div>
+        <div class="about-stat"><div class="n">$145K+</div><div class="l">Annual Savings Delivered</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
 <section class="expertise" id="expertise">
   <div class="section-label">What I Do</div>
   <div class="section-title">Core Expertise</div>
@@ -166,10 +239,126 @@
   </div>
 </section>
 
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="section-label">Featured Projects</div>
+  <div class="section-title">Portfolio</div>
+  <p class="section-sub">Real initiatives, real results. A selection of high-impact WFM projects delivered across multiple organizations.</p>
+  <div class="proj-grid">
+
+    <div class="proj-card">
+      <div class="proj-header">
+        <div class="proj-icon">🤖</div>
+        <div class="proj-header-text">
+          <div class="proj-employer">Coast Capital Savings</div>
+          <div class="proj-title">RTA Bot — AI-Powered Call Center Monitoring</div>
+          <div class="proj-year">2025</div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-desc">An automation tool that captures call center dashboard screenshots, analyzes queue data with AI (GPT-4 Vision), and triggers alerts when thresholds are exceeded. Built with PowerShell, GPT Vision API, and Microsoft 365 — replacing manual monitoring with real-time insights.</p>
+        <ul class="proj-results">
+          <li>Reduced SLA breaches through proactive queue spike detection</li>
+          <li>Shifted operations from reactive to proactive monitoring</li>
+          <li>Intelligent alert thresholds per Line of Business</li>
+          <li>Centralized, shareable output eliminating blind spots</li>
+        </ul>
+        <span class="proj-badge">Automation + AI</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-header">
+        <div class="proj-icon">📈</div>
+        <div class="proj-header-text">
+          <div class="proj-employer">Coast Capital Savings</div>
+          <div class="proj-title">Forecast Accuracy — 60% to 95% in 3 Months</div>
+          <div class="proj-year">2025</div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-desc">When I joined, forecasting accuracy was around 60% with low confidence in the data due to a lack of structured methodology. I rebuilt the process from the ground up — focusing on customer behavior, seasonality, volume fluctuations, and clean data structures.</p>
+        <ul class="proj-results">
+          <li>Accuracy improved from 60% to 90–95% week over week</li>
+          <li>Restored leadership trust in WFM data</li>
+          <li>Created a scalable, repeatable forecasting model</li>
+          <li>Key lesson: strong forecasting = clear logic + clean data</li>
+        </ul>
+        <span class="proj-badge">+35% Accuracy Gain</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-header">
+        <div class="proj-icon">🚀</div>
+        <div class="proj-header-text">
+          <div class="proj-employer">Concentrix</div>
+          <div class="proj-title">CSS Deployment — WFM Technology Implementation</div>
+          <div class="proj-year">2022</div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-desc">Led the implementation of the Concentrix Scheduling System (CSS), an internally developed WFM scheduling tool. The deployment streamlined the entire scheduling process through improved efficiency and automation across Brazil operations.</p>
+        <ul class="proj-results">
+          <li>Scheduling production time cut from 3.5 hrs to 1.5 hrs</li>
+          <li>$45,000 in annual cost savings generated</li>
+          <li>Standardized scheduling across multiple LOBs</li>
+          <li>Reduced manual errors and scheduling conflicts</li>
+        </ul>
+        <span class="proj-badge">$45K Annual Savings</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-header">
+        <div class="proj-icon">🏢</div>
+        <div class="proj-header-text">
+          <div class="proj-employer">Concentrix</div>
+          <div class="proj-title">NICE IEX Deployment — Brazil Operations</div>
+          <div class="proj-year">2022</div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-desc">Led large-scale WFM initiatives across 20+ client operations supporting 10,000+ employees, acting as primary POC for WFM systems and operational transformation. Successfully deployed NICE IEX WFM v7.1 across all Brazil operations.</p>
+        <ul class="proj-results">
+          <li>NICE IEX v7.1 deployed across 10,000+ employee operation</li>
+          <li>Managed and supported 50+ WFM analysts</li>
+          <li>Developed SOPs &amp; process improvements for efficiency</li>
+          <li>Implemented IBM Cognos for capacity management</li>
+        </ul>
+        <span class="proj-badge">10,000+ Employees Impacted</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-header">
+        <div class="proj-icon">⚡</div>
+        <div class="proj-header-text">
+          <div class="proj-employer">Concentrix</div>
+          <div class="proj-title">Gear Project — Improving Data Visibility Through Automation</div>
+          <div class="proj-year">2021</div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-desc">Tackled a key challenge: limited data visibility for a client managing a complex roster spreadsheet that lacked external transparency. Redesigned the process and implemented a Microsoft Power Automate workflow to streamline communication and enable real-time data access.</p>
+        <ul class="proj-results">
+          <li>60% increase in data visibility and accuracy</li>
+          <li>Eliminated fragmented email chains and version confusion</li>
+          <li>Strengthened client trust and engagement</li>
+          <li>Recognized by senior leadership — adopted as a benchmark</li>
+        </ul>
+        <span class="proj-badge">+60% Data Visibility</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-label">How I Can Help</div>
   <div class="section-title">Services Offered</div>
-  <p class="section-sub">Available for full-time leadership roles, consulting engagements, and project-based work. Here's what I can deliver for your organization.</p>
+  <p class="section-sub">Available for full-time leadership roles, consulting engagements, and project-based work.</p>
   <div class="svc-grid">
     <div class="svc-card"><div class="svc-icon">🔎</div><h3>WFM Audit &amp; Optimization</h3><p>A thorough review of your current workforce management processes, tools, and accuracy — delivering a clear, actionable improvement roadmap.</p><div class="svc-tags"><span class="svc-tag">Forecasting Review</span><span class="svc-tag">Scheduling Audit</span><span class="svc-tag">SLA Analysis</span></div></div>
     <div class="svc-card"><div class="svc-icon">🤖</div><h3>Automation &amp; Bot Development</h3><p>Custom automation solutions for RTA monitoring, absenteeism tracking, AHT alerts, and reporting — saving hundreds of operational hours annually.</p><div class="svc-tags"><span class="svc-tag">PowerShell</span><span class="svc-tag">RTA Bot</span><span class="svc-tag">OCR Automation</span></div></div>
@@ -181,6 +370,7 @@
   <div style="text-align:center;"><a href="#contact" class="svc-cta">Let's Discuss Your Needs →</a></div>
 </section>
 
+<!-- EXPERIENCE -->
 <section class="exp-bg" id="experience">
   <div class="section-label">Career</div>
   <div class="section-title">Professional Experience</div>
@@ -206,9 +396,9 @@
         <div class="tl-date">January 2024 – October 2025</div>
         <ul class="tl-bullets">
           <li>Built long- and short-term forecasts for call volumes, AHT, and shrinkage using IEX and advanced Excel models.</li>
-          <li>Developed the RTA Bot (PowerShell + OCR) to automate spike and absenteeism tracking.</li>
+          <li>Developed the RTA Bot (PowerShell + GPT Vision) to automate spike and absenteeism tracking.</li>
+          <li>Improved forecasting accuracy from 60% to 90–95% within three months.</li>
           <li>Delivered daily recaps and biweekly executive presentations with actionable operational insights.</li>
-          <li>Documented WFM procedures to standardize workflows and improve scalability.</li>
         </ul>
       </div>
     </div>
@@ -222,7 +412,7 @@
           <li>Led NICE IEX WFM v7.1 deployment for all Brazil operations (10,000+ employees).</li>
           <li>Built an RTA bot POC that saved $100,000 annually for the organization.</li>
           <li>Developed Power BI dashboard reducing Net Staffing report production from 2 hours to 10 minutes.</li>
-          <li>Increased client dataset visibility from 30% to 90% within 90 days.</li>
+          <li>Increased client dataset visibility from 30% to 90% within 90 days (Gear Project).</li>
           <li>Mentored 50+ WFM analysts across 20+ client accounts.</li>
         </ul>
       </div>
@@ -254,6 +444,7 @@
   </div>
 </section>
 
+<!-- IMPACT -->
 <section class="impact" id="impact">
   <div class="section-label">Results</div>
   <div class="section-title">Measurable Impact</div>
@@ -261,25 +452,27 @@
   <div class="metrics">
     <div class="metric-card"><div class="metric-num">60%→95%</div><div class="metric-label">Forecast accuracy improvement through predictive modeling</div></div>
     <div class="metric-card"><div class="metric-num">$100K</div><div class="metric-label">Annual savings from RTA bot automation at Concentrix</div></div>
-    <div class="metric-card"><div class="metric-num">$45K</div><div class="metric-label">Annual savings from internal scheduling system deployment</div></div>
+    <div class="metric-card"><div class="metric-num">$45K</div><div class="metric-label">Annual savings from CSS scheduling system deployment</div></div>
     <div class="metric-card"><div class="metric-num">2h→10min</div><div class="metric-label">Net Staffing report production time with Power BI automation</div></div>
     <div class="metric-card"><div class="metric-num">30%→90%</div><div class="metric-label">Client dataset visibility improvement within 90 days</div></div>
     <div class="metric-card"><div class="metric-num">+30%</div><div class="metric-label">Agent productivity improvement through optimized scheduling</div></div>
   </div>
 </section>
 
-<section id="skills">
+<!-- SKILLS -->
+<section class="skills" id="skills">
   <div class="section-label">Toolkit</div>
   <div class="section-title">Skills &amp; Technologies</div>
   <p class="section-sub">A broad, battle-tested set of tools and methodologies honed across industries and geographies.</p>
   <div class="skills-grid">
     <div class="skill-group"><h3>WFM Platforms</h3><div class="tags"><span class="tag">NICE IEX WFM</span><span class="tag">IEX Forecasting</span><span class="tag">Avaya CMS</span><span class="tag">Genesys CMS</span><span class="tag">IBM Cognos</span></div></div>
     <div class="skill-group"><h3>Analytics &amp; Reporting</h3><div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">Excel (Advanced)</span><span class="tag">M Language</span><span class="tag">PowerPoint</span></div></div>
-    <div class="skill-group"><h3>Automation &amp; Dev</h3><div class="tags"><span class="tag">PowerShell</span><span class="tag">OCR (Tesseract)</span><span class="tag">Bot Automation</span><span class="tag">SharePoint</span><span class="tag">OneDrive</span></div></div>
+    <div class="skill-group"><h3>Automation &amp; Dev</h3><div class="tags"><span class="tag">PowerShell</span><span class="tag">GPT Vision API</span><span class="tag">OCR (Tesseract)</span><span class="tag">Power Automate</span><span class="tag">Bot Automation</span></div></div>
     <div class="skill-group"><h3>WFM Disciplines</h3><div class="tags"><span class="tag">Forecasting</span><span class="tag">Capacity Planning</span><span class="tag">Scheduling</span><span class="tag">Real-Time Management</span><span class="tag">Shrinkage Analysis</span><span class="tag">Headcount Modeling</span></div></div>
   </div>
 </section>
 
+<!-- EDUCATION -->
 <section class="edu" id="education">
   <div class="section-label">Education</div>
   <div class="section-title">Academic Background</div>
@@ -292,11 +485,12 @@
   </div>
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
+<section class="contact" id="contact">
   <div class="contact-inner">
     <div class="section-label">Get In Touch</div>
-    <div class="section-title">Let's Work Together</div>
-    <p class="section-sub">Whether you're looking for a WFM leader for your organization or a consultant to optimize your workforce operations — I'd love to connect.</p>
+    <div class="section-title">Let's Collaborate</div>
+    <p class="section-sub">Whether you're looking for a WFM leader or a consultant to optimize your workforce operations — I'd love to connect.</p>
     <div class="contact-links">
       <a href="mailto:andremanentem@gmail.com" class="contact-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
@@ -304,21 +498,21 @@
       </a>
       <a href="https://www.linkedin.com/in/andremendes-2610" target="_blank" class="contact-btn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn Profile
+        Connect on LinkedIn
       </a>
       <a href="tel:+17782550144" class="contact-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.87 2 2 0 0 1 3.58 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6.1 6.1l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        +1 778 255 0144
+        778 255 0144
       </a>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Andre Mendes · Workforce Management Leader · Vancouver, BC</footer>
+<footer>© 2026 Andre Mendes · Workforce Management Leader · Vancouver, BC · <a href="https://andremendes92.github.io/andre-mendes-wfm" style="color:rgba(255,255,255,.3);">andremendes92.github.io/andre-mendes-wfm</a></footer>
 
 <script>
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
       e.preventDefault();
       document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
     });
