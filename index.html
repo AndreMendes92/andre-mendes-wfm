@@ -46,19 +46,6 @@
   .section-title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:var(--navy);margin-bottom:14px;}
   .section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:600px;margin-bottom:44px;}
 
-  /* ABOUT */
-  .about{background:var(--navy);}
-  .about-inner{display:flex;gap:60px;align-items:center;flex-wrap:wrap;}
-  .about-photo{flex-shrink:0;}
-  .about-photo img{width:240px;height:280px;object-fit:cover;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.4);border:3px solid rgba(255,255,255,.15);}
-  .about-text{flex:1;min-width:260px;}
-  .about .section-label{color:#7db8f0;}
-  .about .section-title{color:var(--white);}
-  .about-body{color:rgba(255,255,255,.8);font-size:1rem;line-height:1.8;}
-  .about-body p{margin-bottom:14px;}
-  .about-stats{display:flex;gap:32px;margin-top:28px;flex-wrap:wrap;}
-  .about-stat .n{font-size:2rem;font-weight:800;color:#7db8f0;}
-  .about-stat .l{color:rgba(255,255,255,.6);font-size:.82rem;margin-top:2px;}
 
   /* EXPERTISE */
   .expertise{background:var(--light);}
@@ -176,16 +163,16 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO / ABOUT (combined) -->
+<section class="hero" id="about">
   <div class="hero-left">
     <div class="headshot-wrap">
       <img src="photo.jpg" alt="Andre Mendes"/>
     </div>
     <div class="hero-text">
-      <div class="hero-tag">Workforce Management Leader</div>
+      <div class="hero-tag">Workforce Management Leader · Vancouver, BC</div>
       <h1>Andre Mendes<br/><span>WFM Strategist &amp; Team Lead</span></h1>
-      <p class="hero-sub">Elevate your strategy &amp; operations standards. 9+ years turning workforce complexity into measurable business results.</p>
+      <p class="hero-sub">With 10+ years across Brazil and Canada, I help organizations transform complex workforce data into clear strategies — improving forecasting accuracy, automating operations, and reducing costs while maintaining service quality.</p>
       <div class="hero-btns">
         <a href="#portfolio" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-outline">Work With Me</a>
@@ -193,34 +180,13 @@
     </div>
   </div>
   <div class="hero-card">
-    <div class="stat"><div class="stat-num">9+</div><div class="stat-label">Years in WFM</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years in WFM</div></div>
     <div class="divider-v"></div>
     <div class="stat"><div class="stat-num">22+</div><div class="stat-label">Clients Served</div></div>
     <div class="divider-v"></div>
     <div class="stat"><div class="stat-num">95%</div><div class="stat-label">Forecast Accuracy</div></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-inner">
-    <div class="about-photo">
-      <img src="photo.jpg" alt="Andre Mendes"/>
-    </div>
-    <div class="about-text">
-      <div class="section-label">Who Am I?</div>
-      <div class="section-title">Hi, I'm Andre Mendes.</div>
-      <div class="about-body">
-        <p>With over 10 years of experience in Workforce Management, analytics, and operations, I specialize in helping organizations transform complex operational data into clear strategies that drive efficiency and performance.</p>
-        <p>I have worked with more than 22 clients and organizations, led Workforce Management teams in Brazil and Canada, and delivered initiatives that improved forecasting accuracy, optimized staffing models, and reduced operational costs while maintaining service quality.</p>
-        <p>My approach combines data, strategy, and operational expertise to help organizations run smarter and scale sustainably.</p>
-      </div>
-      <div class="about-stats">
-        <div class="about-stat"><div class="n">22+</div><div class="l">Clients &amp; Organizations</div></div>
-        <div class="about-stat"><div class="n">10K+</div><div class="l">Agents Supported</div></div>
-        <div class="about-stat"><div class="n">$145K+</div><div class="l">Annual Savings Delivered</div></div>
-      </div>
-    </div>
+    <div class="divider-v"></div>
+    <div class="stat"><div class="stat-num">$145K+</div><div class="stat-label">Savings Delivered</div></div>
   </div>
 </section>
 
