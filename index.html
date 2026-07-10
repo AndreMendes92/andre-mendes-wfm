@@ -56,6 +56,26 @@
   .card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
   .card p{font-size:.87rem;color:var(--muted);line-height:1.6;}
 
+  /* SHEDULA FEATURED CARD */
+  .shedula-card{background:linear-gradient(135deg,var(--navy) 0%,#0d2d5a 100%);border-radius:12px;padding:40px;display:flex;gap:48px;flex-wrap:wrap;margin-bottom:48px;border:1px solid rgba(46,125,209,.3);box-shadow:0 12px 48px rgba(10,31,60,.18);}
+  .shedula-left{flex:1;min-width:260px;}
+  .shedula-badge{display:inline-block;background:rgba(46,125,209,.25);color:#7db8f0;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:3px;margin-bottom:14px;}
+  .shedula-title{font-size:2rem;font-weight:800;color:var(--white);margin-bottom:4px;}
+  .shedula-tagline{font-size:.9rem;color:#7db8f0;font-style:italic;margin-bottom:16px;}
+  .shedula-desc{color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.75;margin-bottom:20px;}
+  .shedula-feats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .shedula-feats span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:.78rem;padding:4px 10px;border-radius:4px;}
+  .shedula-meta{margin-bottom:20px;}
+  .shedula-stack{font-size:.76rem;color:rgba(255,255,255,.4);letter-spacing:.3px;}
+  .shedula-link{display:inline-block;background:var(--accent);color:var(--white);padding:10px 24px;border-radius:5px;font-weight:700;font-size:.9rem;transition:background .2s;}
+  .shedula-link:hover{background:#1e5fa8;}
+  .shedula-right{min-width:200px;display:flex;flex-direction:column;gap:24px;justify-content:center;}
+  .shedula-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .ss{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:16px;text-align:center;}
+  .ss-n{font-size:1.5rem;font-weight:800;color:#7db8f0;}
+  .ss-l{font-size:.75rem;color:rgba(255,255,255,.55);margin-top:3px;}
+  .shedula-quote{background:rgba(255,255,255,.05);border-left:3px solid var(--accent);padding:14px 16px;border-radius:0 6px 6px 0;color:rgba(255,255,255,.65);font-size:.84rem;line-height:1.6;font-style:italic;}
+
   /* PORTFOLIO */
   .portfolio{background:var(--white);}
   .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;}
@@ -210,6 +230,38 @@
   <div class="section-label">Featured Projects</div>
   <div class="section-title">Portfolio</div>
   <p class="section-sub">Real initiatives, real results. A selection of high-impact WFM projects delivered across multiple organizations.</p>
+
+  <!-- SHEDULA FEATURED CARD -->
+  <div class="shedula-card">
+    <div class="shedula-left">
+      <div class="shedula-badge">🚀 Founder &amp; Builder</div>
+      <h3 class="shedula-title">Shedula.io</h3>
+      <p class="shedula-tagline">Enterprise-grade WFM. Priced for growth.</p>
+      <p class="shedula-desc">A B2B SaaS workforce management platform I designed and built from scratch — applying 10+ years of hands-on WFM experience to solve the scheduling, forecasting, and real-time management challenges that small-to-mid contact centres face daily but can't afford enterprise tooling to fix.</p>
+      <div class="shedula-feats">
+        <span>📅 Coverage-first scheduling engine</span>
+        <span>📈 AI-powered demand forecasting</span>
+        <span>🤖 WFM Assistant Bot (Claude API)</span>
+        <span>⏰ Time-off request workflow</span>
+        <span>🔗 REST API + webhooks</span>
+        <span>🔒 Full RLS security audit</span>
+      </div>
+      <div class="shedula-meta">
+        <span class="shedula-stack">React · FastAPI · PostgreSQL · Supabase · Stripe · Vercel</span>
+      </div>
+      <a href="https://shedula.io" target="_blank" class="shedula-link">Visit Shedula.io →</a>
+    </div>
+    <div class="shedula-right">
+      <div class="shedula-stat-grid">
+        <div class="ss"><div class="ss-n">Live</div><div class="ss-l">Paying customers</div></div>
+        <div class="ss"><div class="ss-n">27</div><div class="ss-l">DB tables with RLS</div></div>
+        <div class="ss"><div class="ss-n">3</div><div class="ss-l">Billing tiers</div></div>
+        <div class="ss"><div class="ss-n">6+</div><div class="ss-l">Trial orgs signed up</div></div>
+      </div>
+      <div class="shedula-quote">"Built from the ground up using my WFM operations expertise — every feature solves a problem I've lived in the field."</div>
+    </div>
+  </div>
+
   <div class="proj-grid">
 
     <div class="proj-card">
@@ -317,7 +369,7 @@
       </div>
     </div>
 
-  </div>
+  </div><!-- end proj-grid -->
 </section>
 
 <!-- SERVICES -->
