@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Andre Mendes — BCLC Enterprise Lead, Workforce Planning</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --bclc-green:#7DBC13;--bclc-dkgreen:#5B890E;--bclc-softgreen:#F5FBEA;
+    --bclc-orange:#E86A10;--bclc-dkorange:#C45A0E;
+    --bclc-red:#9B1831;
+    --bclc-grey:#414B56;--bclc-dkgrey:#272E35;
+    --bclc-softgrey:#F4F5F5;--bclc-midgrey:#D8D8D8;
+    --white:#ffffff;--text:#414B56;--muted:#6b7684;--border:#D8D8D8;
+  }
+  body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--white);}
+  a{color:inherit;text-decoration:none;}
+
+  /* ── TOP BAR ── */
+  .topbar{background:var(--bclc-dkgrey);height:5px;width:100%;}
+
+  /* ── NAV ── */
+  nav{background:var(--white);border-bottom:3px solid var(--bclc-green);padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .nav-logo{display:flex;align-items:center;gap:16px;}
+  .bclc-logo-svg{height:36px;}
+  .nav-divider{width:1px;height:28px;background:var(--border);}
+  .nav-candidate{font-size:.82rem;color:var(--muted);font-weight:500;}
+  .nav-links{display:flex;gap:24px;}
+  .nav-links a{font-size:.82rem;color:var(--bclc-grey);font-weight:600;letter-spacing:.3px;padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  .nav-links a:hover{color:var(--bclc-green);border-bottom-color:var(--bclc-green);}
+
+  /* ── HERO ── */
+  .hero{background:var(--bclc-dkgrey);padding:56px 5% 52px;display:flex;gap:48px;align-items:center;flex-wrap:wrap;}
+  .hero-photo img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--bclc-green);box-shadow:0 6px 24px rgba(0,0,0,.4);}
+  .hero-text{flex:1;min-width:260px;}
+  .hero-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(125,188,19,.15);border:1px solid rgba(125,188,19,.35);color:var(--bclc-green);font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:3px;margin-bottom:16px;}
+  .hero h1{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:6px;}
+  .hero h1 span{color:var(--bclc-green);}
+  .hero-role{color:rgba(255,255,255,.65);font-size:.95rem;margin-bottom:16px;}
+  .hero-contact{display:flex;gap:18px;flex-wrap:wrap;}
+  .hero-contact a,.hero-contact span{color:rgba(255,255,255,.55);font-size:.82rem;transition:color .2s;}
+  .hero-contact a:hover{color:var(--white);}
+  .hero-right{flex-shrink:0;}
+  .role-card{background:rgba(255,255,255,.06);border:1px solid rgba(125,188,19,.3);border-radius:8px;padding:20px 24px;text-align:center;}
+  .role-card .lbl{font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--bclc-green);margin-bottom:8px;}
+  .role-card .role{font-size:.95rem;font-weight:800;color:var(--white);line-height:1.4;}
+  .role-card .org{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:4px;}
+
+  /* ── SECTIONS ── */
+  .sec{padding:52px 5%;}
+  .sec-alt{background:var(--bclc-softgrey);}
+  .sec-dark{background:var(--bclc-dkgrey);}
+  .label{font-size:.68rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--bclc-orange);margin-bottom:8px;}
+  .label-light{color:rgba(232,106,16,.8);}
+  h2{font-size:clamp(1.3rem,2.5vw,1.85rem);font-weight:800;color:var(--bclc-grey);margin-bottom:8px;}
+  h2.light{color:var(--white);}
+  .rule{width:44px;height:4px;background:var(--bclc-green);border-radius:2px;margin-bottom:28px;}
+
+  /* ── PURPOSE BLOCK ── */
+  .purpose-block{background:linear-gradient(135deg,#0e2a0a,#163810);border:1px solid rgba(125,188,19,.2);border-radius:10px;padding:32px 36px;margin-bottom:40px;}
+  .purpose-block .lbl{color:var(--bclc-green);margin-bottom:12px;}
+  .purpose-block p{color:rgba(255,255,255,.8);font-size:.93rem;line-height:1.85;margin-bottom:12px;}
+  .purpose-block p:last-child{margin-bottom:0;}
+  .purpose-block strong{color:var(--bclc-green);}
+
+  /* ── NARRATIVE ── */
+  .narrative-inner{max-width:880px;}
+  .narrative-inner p{font-size:.93rem;color:var(--muted);line-height:1.85;margin-bottom:14px;}
+  .narrative-inner p:last-child{margin-bottom:0;}
+  .narrative-inner strong{color:var(--text);}
+
+  /* ── METRICS ── */
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:18px;}
+  .mc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:22px 14px;text-align:center;}
+  .mc-n{font-size:1.9rem;font-weight:800;color:var(--bclc-green);}
+  .mc-l{color:rgba(255,255,255,.55);font-size:.76rem;margin-top:4px;line-height:1.4;}
+
+  /* ── TIMELINE ── */
+  .tl{max-width:880px;}
+  .tl-item{display:flex;gap:22px;margin-bottom:36px;}
+  .tl-l{display:flex;flex-direction:column;align-items:center;min-width:36px;}
+  .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--bclc-green);border:3px solid var(--white);box-shadow:0 0 0 2px var(--bclc-green);flex-shrink:0;}
+  .tl-line{flex:1;width:2px;background:var(--border);margin-top:5px;}
+  .tl-org{font-size:.7rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--bclc-orange);margin-bottom:3px;}
+  .tl-role{font-size:1rem;font-weight:800;color:var(--bclc-grey);}
+  .tl-date{font-size:.78rem;color:var(--muted);margin:3px 0 10px;}
+  .tl-bullets{list-style:none;padding:0;}
+  .tl-bullets li{font-size:.85rem;color:var(--muted);line-height:1.65;padding-left:15px;position:relative;margin-bottom:5px;}
+  .tl-bullets li::before{content:"›";position:absolute;left:0;color:var(--bclc-green);font-weight:700;font-size:1rem;}
+  .tl-bullets li strong{color:var(--text);}
+  .tl-tag{display:inline-block;background:var(--bclc-softgreen);color:var(--bclc-dkgreen);font-size:.72rem;font-weight:700;padding:3px 12px;border-radius:20px;margin-top:8px;}
+
+  /* ── ALIGNMENT CARDS ── */
+  .align-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+  .align-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:22px 20px;border-top:4px solid var(--bclc-green);transition:box-shadow .2s;}
+  .align-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08);}
+  .align-card .icon{font-size:1.6rem;margin-bottom:10px;}
+  .align-card h3{font-size:.9rem;font-weight:800;color:var(--bclc-grey);margin-bottom:8px;}
+  .align-card p{font-size:.82rem;color:var(--muted);line-height:1.6;}
+  .match{font-size:.68rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--bclc-dkgreen);margin-top:10px;}
+
+  /* ── SKILLS MATCH ── */
+  .sm-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .sm-col h3{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+  .sm-col.bclc h3{color:var(--bclc-red);border-color:var(--bclc-red);}
+  .sm-col.mine h3{color:var(--bclc-dkgreen);border-color:var(--bclc-green);}
+  .sm-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--bclc-softgrey);}
+  .sm-row:last-child{border-bottom:none;}
+  .sm-check{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.72rem;font-weight:800;margin-top:1px;}
+  .sm-col.bclc .sm-check{background:rgba(155,24,49,.1);color:var(--bclc-red);}
+  .sm-col.mine .sm-check{background:var(--bclc-softgreen);color:var(--bclc-dkgreen);}
+  .sm-text{font-size:.83rem;color:var(--muted);line-height:1.55;}
+
+  /* ── FOOTER ── */
+  footer{background:var(--bclc-dkgrey);border-top:4px solid var(--bclc-green);padding:28px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-left{color:rgba(255,255,255,.45);font-size:.78rem;line-height:1.7;}
+  .footer-left a{color:rgba(255,255,255,.45);}
+  .footer-right{display:flex;gap:14px;flex-wrap:wrap;}
+  .footer-link{background:rgba(125,188,19,.12);border:1px solid rgba(125,188,19,.25);color:var(--bclc-green);font-size:.78rem;font-weight:600;padding:6px 14px;border-radius:4px;}
+
+  @media(max-width:700px){
+    .sm-grid{grid-template-columns:1fr;}
+    nav{padding:0 4%;}
+    .nav-links{display:none;}
+    .hero{padding:40px 4% 36px;}
+    .hero-right{width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <!-- BCLC Official Logo SVG from corporate.bclc.com -->
+    <img class="bclc-logo-svg" src="https://corporate.bclc.com/documentation/design-system/styles/colour.coreimg.svg/structure/jcr%3acontent/root/footer/footer-logo/1761164445162/bclc-logo-black.svg" alt="BCLC Logo"/>
+    <div class="nav-divider"></div>
+    <span class="nav-candidate">Andre Mendes · Candidate Portfolio</span>
+  </div>
+  <div class="nav-links">
+    <a href="#story">My Story</a>
+    <a href="#purpose">Why BCLC</a>
+    <a href="#career">Career</a>
+    <a href="#alignment">Alignment</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"><img src="photo.jpg" alt="Andre Mendes"/></div>
+  <div class="hero-text">
+    <div class="hero-pill">📋 Interview Portfolio · August 2026</div>
+    <h1>Andre Mendes<br/><span>WFM Strategist &amp; Team Lead</span></h1>
+    <div class="hero-role">MBA · 10+ Years in Workforce Planning · Vancouver, BC</div>
+    <div class="hero-contact">
+      <span>📍 Vancouver, BC</span>
+      <a href="mailto:andremanentem@gmail.com">andremanentem@gmail.com</a>
+      <a href="tel:+17782550144">778 255 0144</a>
+      <a href="https://www.linkedin.com/in/andremendes-2610" target="_blank">LinkedIn →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="role-card">
+      <div class="lbl">Applying For</div>
+      <div class="role">Enterprise Lead,<br/>Workforce Planning</div>
+      <div class="org">BCLC · Vancouver / Kamloops, BC</div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="sec sec-dark">
+  <div class="metrics-grid">
+    <div class="mc"><div class="mc-n">10+</div><div class="mc-l">Years in Workforce Planning &amp; WFM Strategy</div></div>
+    <div class="mc"><div class="mc-n">22+</div><div class="mc-l">Client portfolios managed at enterprise scale</div></div>
+    <div class="mc"><div class="mc-n">10K+</div><div class="mc-l">Employees under capacity planning scope</div></div>
+    <div class="mc"><div class="mc-n">60→90%</div><div class="mc-l">Forecast accuracy rebuilt in 90 days</div></div>
+    <div class="mc"><div class="mc-n">5</div><div class="mc-l">Global WFM analysts led at Hootsuite</div></div>
+    <div class="mc"><div class="mc-n">MBA</div><div class="mc-l">University Canada West · 2024</div></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec" id="story">
+  <div class="label">My Story</div>
+  <h2>10+ Years Building Workforce Strategy from the Ground Up</h2>
+  <div class="rule"></div>
+  <div class="narrative-inner">
+    <p>I'm a workforce management practitioner with over 10 years of experience — spanning <strong>workforce planning strategy, governance, business analysis, executive-facing hiring decisions, WFM systems implementation, and enterprise capacity planning.</strong></p>
+    <p>I started in 2016 as an RTA at Conduent, building leadership reports and capacity plans for 500+ employees. I was promoted to WFM Lead, overseeing a team of 5 analysts and reporting operations and HR metrics — attrition, turnover, absenteeism — <strong>directly informing leadership's hiring decisions with data.</strong></p>
+    <p>In 2020, I moved to Concentrix as a Workforce Planning Analyst — a deliberate step down in title, because it opened a much broader scope and growth path. That bet paid off: I was promoted to WFM Specialist, where I owned <strong>workforce system implementation and enterprise capacity planning across 10,000+ employees and 22+ portfolios in Brazil.</strong> I partnered directly with Talent Acquisition — opening requisitions, defining business needs, and executing hiring decisions alongside them, not just handing off a headcount number.</p>
+    <p>In 2023, I moved to Vancouver to pursue my Master's, graduating in 2024. That same year I joined Coast Capital Savings, responsible for the entire call centre and customer service function across all BC branches. I <strong>rebuilt their forecasting methodology from ~60% accuracy to a stable 90% within 90 days.</strong> I also led what-if scenario planning during Coast Capital's merger with two other credit unions — modeling resource optimization and reallocation across the combined organization.</p>
+    <p>In 2025, I joined Hootsuite as <strong>Team Lead of Workforce Management</strong>, leading a team of 5 analysts globally and using AI to build new strategies and procedures for the team.</p>
+  </div>
+</section>
+
+<!-- WHY BCLC -->
+<section class="sec sec-alt" id="purpose">
+  <div class="label">Why BCLC</div>
+  <h2>Social Purpose — The Reason I Applied</h2>
+  <div class="rule"></div>
+  <div class="purpose-block">
+    <div class="lbl">Purpose-Driven Career Decision</div>
+    <p>At this point in my career, I'm not just looking for the next role — I'm looking for <strong>a mission worth building towards.</strong> BCLC's commitment to returning 100% of net income to the province, supporting health care, education, First Nations, and communities across BC, is exactly the kind of purpose that gives workforce planning real weight and meaning.</p>
+    <p>I've spent over a decade optimizing workforce operations for corporate performance. I want to bring that same precision, strategy, and leadership to an organization where the output <strong>directly benefits people and communities across British Columbia.</strong> The work I'd do here — building enterprise workforce plans, partnering with leaders, modeling future workforce scenarios — would have a direct line to BCLC's ability to serve the province.</p>
+    <p><strong>BCLC's social purpose isn't a footnote — it's the reason I applied.</strong> I'm ready to invest in something more meaningful, and I believe this is exactly where my experience can make that kind of impact.</p>
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section class="sec" id="career">
+  <div class="label">Career Progression</div>
+  <h2>From RTA to Enterprise Workforce Strategist</h2>
+  <div class="rule"></div>
+  <div class="tl">
+
+    <div class="tl-item">
+      <div class="tl-l"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div>
+        <div class="tl-org">Hootsuite · Vancouver, BC</div>
+        <div class="tl-role">Team Lead, Workforce Management</div>
+        <div class="tl-date">September 2025 – Present</div>
+        <ul class="tl-bullets">
+          <li>Leading a global team of <strong>5 WFM analysts</strong> across forecasting, scheduling, and real-time operations.</li>
+          <li>Building AI-powered strategies and new operating procedures to elevate team capability and governance.</li>
+          <li>Driving WFM strategy, capacity planning, and cross-functional stakeholder alignment at the leadership level.</li>
+        </ul>
+        <span class="tl-tag">Current · Global Team Lead</span>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-l"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div>
+        <div class="tl-org">Coast Capital Savings · Surrey, BC</div>
+        <div class="tl-role">Workforce Planning Analyst</div>
+        <div class="tl-date">January 2024 – October 2025</div>
+        <ul class="tl-bullets">
+          <li>Owned workforce planning for the <strong>entire BC call centre and branch network.</strong></li>
+          <li>Rebuilt forecasting methodology from ~60% to <strong>90%+ accuracy within 90 days.</strong></li>
+          <li>Led <strong>what-if scenario planning during a 3-credit-union merger</strong> — modeled resource optimization and reallocation across the combined organization.</li>
+          <li>Delivered executive-level capacity and hiring recommendations using data-driven analysis.</li>
+        </ul>
+        <span class="tl-tag">Scenario Planning · Merger Integration · BC-Based</span>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-l"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div>
+        <div class="tl-org">Concentrix · São Paulo, Brazil</div>
+        <div class="tl-role">WFM Specialist → Senior Analyst → Analyst</div>
+        <div class="tl-date">April 2020 – September 2023 · 3 yrs 6 mos</div>
+        <ul class="tl-bullets">
+          <li>Promoted to Specialist — owned <strong>enterprise capacity planning across 22+ portfolios and 10,000+ employees.</strong></li>
+          <li><strong>Partnered with Talent Acquisition</strong> to open requisitions, define workforce needs, and drive hiring decisions directly.</li>
+          <li>Led NICE IEX WFM v7.1 deployment across all Brazil operations.</li>
+          <li>Acted as <strong>WFM Governance Lead</strong> — built SOP libraries, process directories, and CI frameworks adopted as benchmarks.</li>
+          <li>Implemented IBM Cognos for centralized capacity visibility. Directed <strong>50+ WFM analysts.</strong></li>
+        </ul>
+        <span class="tl-tag">Enterprise Scale · Governance · TA Partnership</span>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-l"><div class="tl-dot"></div></div>
+      <div>
+        <div class="tl-org">Conduent · São Paulo, Brazil</div>
+        <div class="tl-role">WFM Supervisor → WFM Analyst</div>
+        <div class="tl-date">May 2016 – April 2020 · 4 yrs</div>
+        <ul class="tl-bullets">
+          <li>Promoted to WFM Lead — supervised <strong>5 analysts,</strong> supporting 500+ agents.</li>
+          <li>Delivered executive HR metrics: <strong>attrition, turnover, absenteeism</strong> — directly informing leadership hiring decisions.</li>
+          <li>Built capacity plans and intraday monitoring frameworks; drove a <strong>30% productivity improvement.</strong></li>
+        </ul>
+        <span class="tl-tag">First Leadership Role · HR Metrics · Capacity Planning</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JD ALIGNMENT -->
+<section class="sec sec-alt" id="alignment">
+  <div class="label">Role Alignment</div>
+  <h2>How I Map to the BCLC Job Description</h2>
+  <div class="rule"></div>
+  <div class="align-grid">
+    <div class="align-card">
+      <div class="icon">🗺️</div>
+      <h3>Enterprise WFP Strategy &amp; Governance</h3>
+      <p>Led governance frameworks, SOP libraries, and roadmap design at Concentrix across 10,000+ employees and 22+ accounts. Built audit-ready documentation adopted as operational benchmarks.</p>
+      <div class="match">✓ Direct Match</div>
+    </div>
+    <div class="align-card">
+      <div class="icon">🤝</div>
+      <h3>Executive &amp; Cross-Functional Partnership</h3>
+      <p>Delivered hiring recommendations and capacity insights directly to senior leaders at Conduent, Concentrix, and Coast Capital. Partnered with Talent Acquisition to define and execute workforce needs.</p>
+      <div class="match">✓ Direct Match</div>
+    </div>
+    <div class="align-card">
+      <div class="icon">📊</div>
+      <h3>Forecasting &amp; Scenario Analysis</h3>
+      <p>Rebuilt forecasting methodology at Coast Capital from 60% to 90%+ in 90 days. Led what-if modeling during a 3-organization merger. Built Erlang C, shrinkage, and demand models across industries.</p>
+      <div class="match">✓ Direct Match</div>
+    </div>
+    <div class="align-card">
+      <div class="icon">📐</div>
+      <h3>Supply &amp; Demand · Headcount Modeling</h3>
+      <p>Owned long-range capacity plans accounting for attrition, ramp-down, seasonality, and growth across enterprise operations — directly informing both hiring strategy and business investment decisions.</p>
+      <div class="match">✓ Direct Match</div>
+    </div>
+    <div class="align-card">
+      <div class="icon">👥</div>
+      <h3>People Leadership &amp; Coaching</h3>
+      <p>Currently leading 5 global analysts at Hootsuite. Previously mentored 50+ WFM analysts at Concentrix and led a team of 5 at Conduent. Built training programs and structured development cultures.</p>
+      <div class="match">✓ Direct Match</div>
+    </div>
+    <div class="align-card">
+      <div class="icon">🔧</div>
+      <h3>WFM Systems &amp; Business Intelligence</h3>
+      <p>Deployed NICE IEX WFM v7.1 (10,000+ employees), IBM Cognos, IEX Forecasting, Avaya/Genesys CMS. Built Power BI executive dashboards cutting reporting from 2 hours to 10 minutes.</p>
+      <div class="match">✓ Direct Match</div>
+    </div>
+    <div class="align-card">
+      <div class="icon">🔄</div>
+      <h3>Change Management &amp; Transformation</h3>
+      <p>Led organizational WFM transformation at Coast Capital during a 3-credit-union merger. Drove enterprise-wide NICE IEX deployment and governance adoption across Brazil BPO operations.</p>
+      <div class="match">✓ Direct Match</div>
+    </div>
+    <div class="align-card">
+      <div class="icon">🌱</div>
+      <h3>Social Purpose Alignment</h3>
+      <p>At this stage of my career, I'm seeking a mission beyond corporate metrics. BCLC's commitment to BC communities, First Nations, health care, and education is precisely the kind of purpose I want my work to serve.</p>
+      <div class="match">✓ Values Match</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS MATCH -->
+<section class="sec">
+  <div class="label">Skills Alignment</div>
+  <h2>BCLC Requirements vs. My Experience</h2>
+  <div class="rule"></div>
+  <div class="sm-grid">
+    <div class="sm-col bclc">
+      <h3>BCLC Is Looking For</h3>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Workforce planning strategy &amp; governance framework leadership</div></div>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Workforce forecasts &amp; scenario analysis for executive decisions</div></div>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Supply &amp; demand planning, headcount modeling</div></div>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Integration with corporate strategy &amp; business planning</div></div>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Partnership with HR, Finance, and Strategy leaders</div></div>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Workforce analytics, data visualization &amp; BI tools</div></div>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Change management &amp; transformation leadership</div></div>
+      <div class="sm-row"><div class="sm-check">→</div><div class="sm-text">Team leadership, coaching &amp; development</div></div>
+    </div>
+    <div class="sm-col mine">
+      <h3>What I Bring</h3>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Built governance frameworks &amp; SOP libraries at enterprise scale (Concentrix, Hootsuite)</div></div>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Rebuilt forecasting accuracy 60→90% in 90 days; led merger scenario modeling at Coast Capital</div></div>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Owned capacity plans for 22+ portfolios &amp; 10,000+ employees with IBM Cognos</div></div>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Led what-if modeling during 3-credit-union merger — resource optimization &amp; reallocation</div></div>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Partnered directly with Talent Acquisition on requisitions &amp; hiring decisions at Concentrix</div></div>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Power BI, Excel, IEX, IBM Cognos — executive dashboards &amp; reporting pipelines</div></div>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Led NICE IEX deployment &amp; CSS implementation — enterprise change at scale</div></div>
+      <div class="sm-row"><div class="sm-check">✓</div><div class="sm-text">Leading 5 global analysts at Hootsuite; previously 50+ analysts at Concentrix</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    Andre Mendes · Enterprise Lead, Workforce Planning · BCLC Interview Portfolio<br/>
+    <a href="mailto:andremanentem@gmail.com">andremanentem@gmail.com</a> · <a href="tel:+17782550144">778 255 0144</a>
+  </div>
+  <div class="footer-right">
+    <a href="https://www.linkedin.com/in/andremendes-2610" target="_blank" class="footer-link">LinkedIn →</a>
+    <a href="https://andremendes92.github.io/andre-mendes-wfm" target="_blank" class="footer-link">Full Portfolio →</a>
+  </div>
+</footer>
+
+</body>
+</html>
